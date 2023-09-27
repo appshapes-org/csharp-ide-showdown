@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+  database:
+    container_name: csharp-ide-showdown
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+
+  test:
+    container_name: csharp-ide-showdown-test
+    build:
+      context: .
+      dockerfile: docker-dotnet.dockerfile
+    environment:
+      DOTNET_ENVIRONMENT: Test
+    entrypoint: ./wait-for-it.sh database:5432 -- /usr/bin/dotnet test --filter ${DOTNET_TEST_FILTER:-"Category!=Ignored"}
+    depends_on:
+      - database
