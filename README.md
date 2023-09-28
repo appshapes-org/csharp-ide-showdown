@@ -1,35 +1,21 @@
 # What is this for?
 
-TBD
+This repository contains examples used in [C# Editor Showdown](https://www.appshapes.com/csharp-ide-showdown)
 
 # Who is this for?
 
-TBD
+Developers, platform engineers, managers, heck anybody, that needs to be productive with .NET and C#.
 
 # What is here?
 
-## Database
-
-TBD
-
 ## Domain
 
-TBD
+Example entities (e.g., Order, Customer, Address).
+
+## Infrastructure
+
+Example repositories for "persisting" domain entities.
 
 ## Tests
 
-TBD
-
-## Docker Compose
-
-TBD
-
-# What are the dependencies?
-
-- Docker
-
-# How do I run?
-
-```shell
-~/projects/csharp-ide-showdown # make test-all
-```
+Unit tests for the `Domain` and `Infrastructure` projects.
