@@ -1,6 +1,6 @@
 ﻿namespace Domain;
 
-public class Ordr
+public class Order
 {
     public required Address BillingAddress { get; set; }
 
@@ -27,9 +27,9 @@ public class Customer
 {
     public required Address Address { get; set; }
 
-  public Guid Id { get; set; } = Guid.NewGuid();
+    public Guid Id { get; set; } = Guid.NewGuid();
 
     public required string Name { get; set; }
 
-    public List<Ordr> Orders { get; } = new List<Ordr>();
+    public List<Order> Orders { get; } = new List<Order>();
 }
